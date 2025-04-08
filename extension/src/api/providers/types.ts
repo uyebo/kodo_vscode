@@ -125,6 +125,8 @@ export type ProviderSettings =
 	| DeepseekSettings
 	| DeepInfraSettings
 	| OpenAICompatibleSettings
+        | XiaoaiSettings
+
 
 
 export interface ProviderWithModel {
