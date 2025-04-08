@@ -5,6 +5,7 @@ export const PROVIDER_IDS = {
 	GOOGLE_VERTEX: "google-vertex",
 	AMAZON_BEDROCK: "amazon-bedrock",
 	OPENAI: "openai",
+	XIAOAI:"xiaoai",
 	TOGETHER_AI: "together-ai",
 	FIREWORKS: "fireworks",
 	DEEPSEEK: "deepseek",
@@ -21,6 +22,7 @@ export const PROVIDER_NAMES = {
 	[PROVIDER_IDS.GOOGLE_VERTEX]: "Google Vertex AI",
 	[PROVIDER_IDS.AMAZON_BEDROCK]: "Amazon Bedrock",
 	[PROVIDER_IDS.OPENAI]: "OpenAI",
+	[PROVIDER_IDS.XIAOAI]: "xiaoai",
 	[PROVIDER_IDS.MISTRAL]: "Mistral",
 	[PROVIDER_IDS.TOGETHER_AI]: "Together.ai",
 	[PROVIDER_IDS.FIREWORKS]: "Fireworks.ai",
@@ -42,6 +44,7 @@ export const DEFAULT_BASE_URLS = {
 	[PROVIDER_IDS.OPENAICOMPATIBLE]: "http://localhost:1234",
 	[PROVIDER_IDS.MISTRAL]: "https://codestral.mistral.ai/v1",
 	[PROVIDER_IDS.ANTHROPIC]: "https://xiaoai.plus/v1",
+	[PROVIDER_IDS.XIAOAI]: "https://xiaoai.plus/v1",
 	[PROVIDER_IDS.OPENROUTER]: "https://openrouter.ai/api/v1",
 } as const
 
