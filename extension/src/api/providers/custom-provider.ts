@@ -18,6 +18,11 @@ import { GlobalState, GlobalStateManager } from "../../providers/state/global-st
 import { OpenRouterModelCache } from "./config/openrouter-cache"
 import { getOpenrouterGenerationData } from "./config/openrouter"
 import delay from "delay"
+case PROVIDER_IDS.XIAOAI:
+  if (!settings.apiKey) throw error
+  return createXiaoaiSDK({
+    apiKey: settings.apiKey
+  }).languageModel(modelId)
 
 type ExtractCacheTokens = {
 	cacheCreationField: string
