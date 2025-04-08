@@ -14,7 +14,7 @@
 	"publisher": "kodu-ai",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/kodu-ai/claude-coder"
+		"url": "https://github.com/uyebo/kodo_vscode.git"
 	},
 	"categories": [
 		"AI",
