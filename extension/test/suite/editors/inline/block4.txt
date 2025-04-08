@@ -1,0 +1,46 @@
+<<<<<<< HEAD
+const autoCloseTerminalAtom = atom(false)
+autoCloseTerminalAtom.debugLabel = "autoCloseTerminal"
+
+const useUdiffAtom = atom(false)
+useUdiffAtom.debugLabel = "useUdiff"
+=======
+const autoCloseTerminalAtom = atom(false)
+autoCloseTerminalAtom.debugLabel = "autoCloseTerminal"
+
+const gitHandlerEnabledAtom = atom(true)
+gitHandlerEnabledAtom.debugLabel = "gitHandlerEnabled"
+
+const useUdiffAtom = atom(false)
+useUdiffAtom.debugLabel = "useUdiff"
+>>>>>>> updated
+<<<<<<< HEAD
+export const extensionStateAtom = atom((get) => ({
+	version: get(versionAtom),
+	commandTimeout: get(commandTimeoutAtom),
+=======
+export const extensionStateAtom = atom((get) => ({
+	version: get(versionAtom),
+	gitHandlerEnabled: get(gitHandlerEnabledAtom),
+	commandTimeout: get(commandTimeoutAtom),
+>>>>>>> updated
+<<<<<<< HEAD
+			setAutoCloseTerminal(!!message.state.autoCloseTerminal)
+			setUser(message.state.user)
+			setExtensionName(message.state.extensionName)
+=======
+			setAutoCloseTerminal(!!message.state.autoCloseTerminal)
+			setGitHandlerEnabled(message.state.gitHandlerEnabled ?? true)
+			setUser(message.state.user)
+			setExtensionName(message.state.extensionName)
+>>>>>>> updated
+<<<<<<< HEAD
+	const setAutoCloseTerminal = useSetAtom(autoCloseTerminalAtom)
+	const setTechnicalBackground = useSetAtom(technicalBackgroundAtom)
+	const setCreativeMode = useSetAtom(creativeModeAtom)
+=======
+	const setAutoCloseTerminal = useSetAtom(autoCloseTerminalAtom)
+	const setGitHandlerEnabled = useSetAtom(gitHandlerEnabledAtom)
+	const setTechnicalBackground = useSetAtom(technicalBackgroundAtom)
+	const setCreativeMode = useSetAtom(creativeModeAtom)
+>>>>>>> updated

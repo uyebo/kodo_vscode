@@ -1,0 +1,150 @@
+<<<<<<< HEAD
+"""
+Interactive script that demonstrates blocking input.
+Gets user's name and age along with other questions in a deterministic random order
+based on the file location. Successfully completing the interaction reveals a CTF token.
+"""
+import sys
+import hashlib
+import random
+import os
+
+def get_user_info():
+=======
+"""
+Interactive Personality Greeter and CTF Challenge
+
+This script implements an engaging interactive questionnaire that demonstrates secure
+blocking input handling while creating a fun and personalized experience for users.
+It combines personality assessment with cryptographic concepts to generate a unique
+CTF (Capture The Flag) token.
+
+Key Features:
+    - Deterministic question randomization based on file location
+    - Secure token generation using SHA-256 hashing
+    - Personalized responses based on user input
+    - Age-appropriate engagement messages
+    - Input validation and error handling
+
+Security Aspects:
+    - Uses file path as a deterministic seed for question ordering
+    - Implements MD5 for seed generation (non-security critical)
+    - Uses SHA-256 for token generation with a secret salt
+    - Ensures consistent output flushing for reliable interaction
+
+Example Usage:
+    $ ./greeter
+    Welcome to the Interactive Greeter!
+    What's your name? Alice
+    How old are you? 25
+    ... (additional questions in random order)
+    Congratulations! Here's your token: CTF_abc123def456
+"""
+import sys
+import hashlib
+import random
+import os
+
+def get_user_info():
+    """
+    Manages the interactive questionnaire session and generates a CTF token.
+    
+    The function implements a deterministic yet randomized questioning system
+    where the order of questions is based on the script's file location hash.
+    It provides personalized responses and validates user input where appropriate.
+    
+    Returns:
+        None: Prints interaction messages and final CTF token to stdout
+    
+    Security Notes:
+        - Token generation uses SHA-256 with a secret salt
+        - Question order is deterministic per installation
+        - All outputs are flushed to ensure reliable interaction
+    """
+>>>>>>> updated
+<<<<<<< HEAD
+    # Ask all questions in our determined order
+    for question, q_type in questions:
+        # Ask the question
+        answer = input(question)
+        
+        # Process the answer based on type
+        if q_type == "name":
+            name = answer
+            print(f"Nice to meet you, {name}!", flush=True)
+        elif q_type == "age":
+            while True:
+                try:
+                    age = int(answer)
+                    # Provide age-specific response
+                    if age < 18:
+                        print("Hey, you're still young! Enjoy your youth!", flush=True)
+                    elif age < 30:
+                        print("Your twenties are a great time to learn and grow!", flush=True)
+                    elif age < 50:
+                        print("Hope you're enjoying life's adventures!", flush=True)
+                    else:
+                        print("Your wisdom and experience are valuable!", flush=True)
+                    break
+=======
+    # Ask all questions in our determined order
+    for question, q_type in questions:
+        # Ask the question and ensure proper output flushing
+        print(question, end='', flush=True)
+        answer = input()
+        
+        # Process the answer based on type with enhanced interaction
+        if q_type == "name":
+            # Validate name input (non-empty and contains valid characters)
+            while not answer.strip() or not all(c.isalpha() or c.isspace() for c in answer):
+                print("Please enter a valid name (letters and spaces only):", end='', flush=True)
+                answer = input()
+            name = answer.strip()
+            print(f"✨ Wonderful to meet you, {name}! Your name has a lovely ring to it!", flush=True)
+        
+        elif q_type == "age":
+            while True:
+                try:
+                    age = int(answer)
+                    if age <= 0 or age > 120:
+                        raise ValueError("Age out of realistic range")
+                    
+                    # Enhanced age-specific responses with emojis and personality
+                    if age < 18:
+                        print("🌟 Ah, the wonder years! The world is full of possibilities waiting for you.", flush=True)
+                        print("Remember, every great journey starts with curiosity! 🚀", flush=True)
+                    elif age < 25:
+                        print("🎓 Early twenties - what an exciting time! You're writing the first chapters", flush=True)
+                        print("of your adult life story. Make it a page-turner! ✨", flush=True)
+                    elif age < 35:
+                        print("💫 The golden age of discovery! You've got the perfect blend of", flush=True)
+                        print("energy and wisdom to chase your dreams! 🌈", flush=True)
+                    elif age < 50:
+                        print("🌺 Life's adventures are in full swing! Your experience is your superpower,", flush=True)
+                        print("and the best chapters are still being written! 📖", flush=True)
+                    else:
+                        print("🌟 A lifetime of wisdom! You've collected so many amazing stories,", flush=True)
+                        print("and there's still so much more to explore! 🎨", flush=True)
+                    break
+>>>>>>> updated
+<<<<<<< HEAD
+        else:
+            # Generic response for other questions
+            print(f"Thanks for sharing that!", flush=True)
+        
+        sys.stdout.flush()
+=======
+        else:
+            # Enhanced responses for other questions
+            if q_type == "color":
+                print(f"🎨 {answer.capitalize()}! A color that speaks volumes about personality!", flush=True)
+                print("Did you know colors can influence our mood and creativity? ✨", flush=True)
+            elif q_type == "hobby":
+                print(f"🌟 {answer.capitalize()} - what a fantastic way to express yourself!", flush=True)
+                print("The best hobbies are the ones that make our hearts smile! 💫", flush=True)
+            elif q_type == "location":
+                print(f"🌍 {answer.capitalize()}! Every place has its own magical story to tell!", flush=True)
+                print("Thank you for sharing a piece of your world with me! ✨", flush=True)
+        
+        sys.stdout.flush()
+>>>>>>> updated
