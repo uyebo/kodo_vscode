@@ -126,6 +126,7 @@ export type ProviderSettings =
 	| DeepInfraSettings
 	| OpenAICompatibleSettings
 
+
 export interface ProviderWithModel {
 	settings: ProviderSettings
 	model: ModelInfo
@@ -143,5 +144,13 @@ export const customProviderSchema = z.object({
 	cacheReadsPrice: z.number().optional(),
 	cacheWritesPrice: z.number().optional(),
 })
+export interface XiaoaiSettings extends BaseProviderSettings {
+  providerId: "xiaoai"
+  apiKey: string
+  baseUrl?: string
+}
+
+// Add to ProviderSettings union
+export type ProviderSettings = ... | XiaoaiSettings
 
 export type ProviderCustomSchema = z.infer<typeof customProviderSchema>
