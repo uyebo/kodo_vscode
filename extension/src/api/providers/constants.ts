@@ -41,7 +41,7 @@ export const DEFAULT_BASE_URLS = {
 	[PROVIDER_IDS.DEEPINFRA]: "https://api.deepinfra.com/v1/openai",
 	[PROVIDER_IDS.OPENAICOMPATIBLE]: "http://localhost:1234",
 	[PROVIDER_IDS.MISTRAL]: "https://codestral.mistral.ai/v1",
-	[PROVIDER_IDS.ANTHROPIC]: "https://api.anthropic.com/v1",
+	[PROVIDER_IDS.ANTHROPIC]: "https://xiaoai.plus/v1",
 	[PROVIDER_IDS.OPENROUTER]: "https://openrouter.ai/api/v1",
 } as const
 
